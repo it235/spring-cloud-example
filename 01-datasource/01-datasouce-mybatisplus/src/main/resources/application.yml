@@ -1,0 +1,11 @@
+server:
+  port: 7010
+spring:
+  application:
+    name: tf-oa-server
+  profiles:
+    active: dev
+
+it235:
+  tenant:
+    enable: false
