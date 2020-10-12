@@ -87,5 +87,7 @@
 
     <modules>
         <module>01-datasource</module>
+        <module>05-monitor</module>
+        <module>02-cache</module>
     </modules>
 </project>

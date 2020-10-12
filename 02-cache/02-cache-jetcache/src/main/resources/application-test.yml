@@ -1,0 +1,8 @@
+# 测试环境相关配置在这里写，由spring.profiles.active控制
+it235:
+  tenant:
+    enable: false
+  redis:
+    host: localhost
+    password: knife
+    port: 6379

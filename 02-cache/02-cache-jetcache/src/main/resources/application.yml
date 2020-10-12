@@ -1,0 +1,19 @@
+server:
+  port: 7020
+spring:
+  application:
+    name: it235-boot-redis
+  profiles:
+    active: test
+  redis:
+    host: ${it235.redis.host}
+    password: ${it235.redis.password}
+    port: ${it235.redis.port}
+    database: 1 # 使用库 1
+    timeout: 60s
+    lettuce: # lettuce基于netty，线程安全，支持并发
+      pool:
+        max-active: 50
+        max-wait: -1ms
+        max-idle: 8
+        min-idle: 0

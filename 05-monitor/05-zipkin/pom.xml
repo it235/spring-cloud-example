@@ -3,19 +3,22 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>spring-cloud-example</artifactId>
+        <artifactId>05-monitor</artifactId>
         <groupId>com.it235.cloud.example</groupId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>01-datasource</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <artifactId>05-zipkin</artifactId>
     <packaging>pom</packaging>
-    <description>存放datasouce集成相关代码，集成了</description>
-
+    <description>
+        SpringBoot2.2.9整合zipkin链路追踪，
+        可监控远程服务调用、redis、MySQL
+    </description>
     <modules>
-        <module>01-datasource-mybatisplus</module>
+        <module>05-zipkin-consumer</module>
+        <module>05-zipkin-producer</module>
     </modules>
+
 
 </project>

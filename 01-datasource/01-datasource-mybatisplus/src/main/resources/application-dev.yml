@@ -1,0 +1,9 @@
+# 开发环境相关配置在这里写，由spring.profiles.active控制
+it235:
+  tenant:
+    enable: false
+  mysql:
+    username: root
+    password: 123456
+    url: 192.168.0.245:3306
+    dbname: wzrdev

@@ -1,0 +1,9 @@
+# 测试环境相关配置在这里写，由spring.profiles.active控制
+it235:
+  tenant:
+    enable: true
+  mysql:
+    username: root
+    password: Ron60818
+    url: localhost:3306
+    dbname: wzrdev
