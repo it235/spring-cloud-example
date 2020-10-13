@@ -1,0 +1,18 @@
+server:
+  port: 7055
+spring:
+  application:
+    name: it235-boot-zipkin-consumer
+  zipkin:
+    base-url: http://47.92.230.43:9411/
+    enabled: true
+    discovery-client-enabled: false
+    sender:
+      type: web
+    service:
+      name: ${spring.application.name}
+    compression:
+      enabled: true
+  sleuth:
+    sampler:
+      probability: 1

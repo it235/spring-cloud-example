@@ -33,6 +33,7 @@ public class DatasourceMpController {
     @GetMapping("/get/{id}")
     public SysProvince getById(@PathVariable("id") int id){
         SysProvince province1 = sysProvinceService.getByIdAnnotation(id);
+        test(String.valueOf(id));
         return province1;
     }
 

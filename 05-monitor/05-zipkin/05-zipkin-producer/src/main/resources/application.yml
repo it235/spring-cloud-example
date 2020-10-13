@@ -2,11 +2,11 @@ server:
   port: 7050
 spring:
   application:
-    name: it235-boot-zipkin
+    name: it235-boot-zipkin-producer
   profiles:
     active: test
   datasource:
-    url: jdbc:mysql://${it235.mysql.url}/${it235.mysql.dbname}?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=false&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&rewriteBatchedStatements=true
+    url: jdbc:mysql://${it235.mysql.url}/${it235.mysql.dbname}?queryInterceptors=brave.mysql8.TracingQueryInterceptor&exceptionInterceptors=brave.mysql8.TracingExceptionInterceptor&zipkinServiceName=yourdb&serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=false&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&rewriteBatchedStatements=true
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: ${it235.mysql.username}
     password: ${it235.mysql.password}
@@ -53,7 +53,19 @@ spring:
         max-wait: -1ms
         max-idle: 8
         min-idle: 0
-
+  zipkin:
+    base-url: http://47.92.230.43:9411/
+    enabled: true
+    discovery-client-enabled: false
+    sender:
+      type: web
+    service:
+      name: ${spring.application.name}
+    compression:
+      enabled: true
+  sleuth:
+    sampler:
+      probability: 1
 # mybatis-plus配置
 mybatis-plus:
   configuration:

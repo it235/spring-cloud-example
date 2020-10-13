@@ -4,10 +4,10 @@ it235:
     enable: false
   mysql:
     username: root
-    password: 123456
-    url: 192.168.0.245:3306
-    dbname: wzrdev
+    password: TFSQL987
+    url: 47.92.230.43:3306
+    dbname: wzrtest
   redis:
-    host: localhost
-    password: 123456
+    host: 47.92.230.43
+    password: UATTiFangEDU123
     port: 6379
