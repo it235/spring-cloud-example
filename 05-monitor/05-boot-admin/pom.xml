@@ -3,19 +3,18 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>spring-cloud-example</artifactId>
+        <artifactId>05-monitor</artifactId>
         <groupId>com.it235.cloud.example</groupId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.it235.cloud.example</groupId>
-    <artifactId>05-monitor</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>05-zipkin</module>
-        <module>05-boot-admin</module>
-    </modules>
+    <artifactId>05-boot-admin</artifactId>
+    <description>SpringBoot2.X整合spring-boot-admin</description>
 
+    <modules>
+        <module>05-boot-admin-A</module>
+        <module>05-boot-admin-server</module>
+    </modules>
 
 </project>

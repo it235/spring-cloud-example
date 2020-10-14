@@ -10,6 +10,7 @@
     <version>1.0.0-SNAPSHOT</version>
 
 
+
     <!--属性文件配置，子项目均集成该子项配置-->
     <properties>
         <!--编码-->

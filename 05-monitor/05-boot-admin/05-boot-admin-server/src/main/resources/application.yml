@@ -1,0 +1,16 @@
+server:
+  port: 8769
+spring:
+  application:
+    name: it235-boot-admin-server
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+logging:
+  level:
+    root: info
