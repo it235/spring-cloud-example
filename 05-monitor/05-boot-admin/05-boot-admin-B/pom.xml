@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>05-boot-admin-A</artifactId>
+    <artifactId>05-boot-admin-B</artifactId>
     <description>SpringBoot2.X整合spring-boot-admin</description>
 
     <properties>
@@ -68,6 +68,7 @@
             <artifactId>spring-boot-admin-starter-client</artifactId>
             <version>${spring-boot-admin-client.version}</version>
         </dependency>
+
 
         <dependency>
             <groupId>com.alibaba.cloud</groupId>

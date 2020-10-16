@@ -1,8 +1,21 @@
 server:
-  port: 7056
+  port: 7058
 spring:
   application:
-    name: it235-boot-admin
+    name: it235-boot-admin-b
+  cloud:
+    nacos:
+      discovery:
+        #必须配置ip地址
+        server-addr: nacos.it235.com:80
+        # 将自己的服务注册到注册中心
+        register-enabled: true
+        namespace: 343f2aa2-1a42-43ea-b078-33ab7d58bd6a
+      config:
+        server-addr: nacos.it235.com:80
+        enabled: true
+        file-extension: yaml
+        namespace: 343f2aa2-1a42-43ea-b078-33ab7d58bd6a
   # 配置spring-boot-admin服务端的地址
   boot:
     admin:
@@ -13,7 +26,7 @@ spring:
 management:
   # 端点信息接口使用的端口，为了和主系统接口使用的端口进行分离
   server:
-    port: 7057
+    port: 7059
     servlet:
       context-path: /sys
   # 端点健康情况，默认值"never"，设置为"always"可以显示硬盘使用情况和线程情况
@@ -26,5 +39,8 @@ management:
       exposure:
         include: '*'
 logging:
+  config: classpath:logback-spring.xml
   level:
-    root: debug
+    root: info
+  #  方便Spring Boot Admin页面上实时查看日志
+  file: logs/it235-boot-admin.log

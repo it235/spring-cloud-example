@@ -1,0 +1,46 @@
+server:
+  port: 7056
+spring:
+  application:
+    name: it235-boot-admin-a
+  cloud:
+    nacos:
+      discovery:
+        #必须配置ip地址
+        server-addr: nacos.it235.com:80
+        # 将自己的服务注册到注册中心
+        register-enabled: true
+        namespace: 343f2aa2-1a42-43ea-b078-33ab7d58bd6a
+      config:
+        server-addr: nacos.it235.com:80
+        enabled: true
+        file-extension: yaml
+        namespace: 343f2aa2-1a42-43ea-b078-33ab7d58bd6a
+  # 配置spring-boot-admin服务端的地址
+  boot:
+    admin:
+      client:
+        enabled: true
+        url: http://localhost:8769
+# 健康检查访问: http://ip:port/sys/actuator/health
+management:
+  # 端点信息接口使用的端口，为了和主系统接口使用的端口进行分离
+  server:
+    port: 7057
+    servlet:
+      context-path: /sys
+  # 端点健康情况，默认值"never"，设置为"always"可以显示硬盘使用情况和线程情况
+  endpoint:
+    health:
+      show-details: always
+  # 设置端点暴露的哪些内容，默认["health","info"]，设置"*"代表暴露所有可访问的端点
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+logging:
+  config: classpath:logback-spring.xml
+  level:
+    root: info
+  #  方便Spring Boot Admin页面上实时查看日志
+  file: logs/it235-boot-admin.log

@@ -1,0 +1,29 @@
+server:
+  port: 8769
+spring:
+  application:
+    name: it235-boot-admin-server
+  cloud:
+    nacos:
+      discovery:
+        #必须配置ip地址
+        server-addr: nacos.it235.com:80
+        # 将自己的服务注册到注册中心
+        register-enabled: true
+        namespace: 343f2aa2-1a42-43ea-b078-33ab7d58bd6a
+      config:
+        server-addr: nacos.it235.com:80
+        enabled: true
+        file-extension: yaml
+        namespace: 343f2aa2-1a42-43ea-b078-33ab7d58bd6a
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+logging:
+  level:
+    root: info

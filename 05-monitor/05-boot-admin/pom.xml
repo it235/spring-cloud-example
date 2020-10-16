@@ -14,6 +14,7 @@
 
     <modules>
         <module>05-boot-admin-A</module>
+        <module>05-boot-admin-B</module>
         <module>05-boot-admin-server</module>
     </modules>
 
