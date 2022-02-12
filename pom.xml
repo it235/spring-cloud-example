@@ -11,7 +11,7 @@
 
 
 
-    <!--属性文件配置，子项目均集成该子项配置-->
+    <!--属性文件配置，子项目均集成该子项配置，具体依赖在每个模块中-->
     <properties>
         <!--编码-->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
